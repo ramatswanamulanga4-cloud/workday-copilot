@@ -1,38 +1,110 @@
-# Workday Copilot
+# AI Workplace Productivity Assistant
 
-Build a modern, responsive SaaS web app called AI Workplace Productivity Assistant to help professionals complete workplace tasks efficiently.
+## Overview
 
-Features:
+The **AI Workplace Productivity Assistant** is a modern, responsive web application designed to help professionals improve productivity by simplifying everyday workplace tasks. It provides tools for drafting professional emails, researching information, summarising content, and getting assistance through an AI chatbot.
 
-Smart Email Generator: Generate context-specific professional emails from user instructions, with Formal, Friendly, and Persuasive tones. Allow editing and copying outputs.
+The application features a clean SaaS-style dashboard with a light-grey and dark colour scheme, simple navigation, and editable outputs.
 
-AI Research Assistant: Summarise user-provided text, topics, and URLs when accessible. Provide key findings, insights, and actionable recommendations.
+## Features
 
-AI Chatbot: A conversational workplace assistant that answers user prompts with relevant, detailed, context-aware responses instead of generic templates.
+### 1. Smart Email Generator
+- Generate professional emails based on user instructions.
+- Choose between Formal, Friendly, and Persuasive tones.
+- Edit, copy, and refine generated email content.
 
-Design: Create a clean, premium dashboard with sidebar navigation, a light-grey background, dark charcoal text, white cards, subtle borders, and minimal blue accents. Include a dashboard overview, clear input forms, loading states, editable results, copy buttons, and mobile-friendly layouts.
+### 2. AI Research Assistant
+- Summarise user-provided text and research topics.
+- Analyse accessible website URLs when supported.
+- Present key findings, insights, and practical recommendations.
 
-Technical requirements: Use React and Tailwind CSS. No backend, database, authentication, or paid services. Use browser-side functionality and local state. Do not fake AI functionality: connect to a user-configured AI API key if supported, or clearly explain that real AI responses require an API connection. Never expose secret API keys in frontend code. Do not use hardcoded sample responses as real AI output.
+### 3. AI Chatbot
+- Interact with a workplace productivity assistant.
+- Ask questions and receive context-specific responses.
+- Get help with writing, planning, brainstorming, and workplace tasks.
 
-Add a concise responsible AI disclaimer reminding users to verify generated content and avoid entering confidential workplace information. Prioritise a functional MVP, reusable components, and a polished user experience. Keep implementation simple and suitable for a free Lovable account.
+### 4. User Interface
+- Modern dashboard with sidebar navigation.
+- Responsive layout for desktop, tablet, and mobile devices.
+- Light-grey backgrounds, dark text, and clean white cards.
+- Editable outputs, copy buttons, and clear input forms.
 
-This project was built with [Lovable](https://lovable.dev).
+## Technology Stack
 
-## Build with Lovable
+- **React** – User interface development.
+- **Tailwind CSS** – Responsive styling.
+- **JavaScript** – Application functionality.
+- **Lovable** – AI-assisted application development.
+- **Browser local state** – Managing temporary user interactions and application data.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/7f52923a-421f-417e-92f5-97c686924dbf).
+## Getting Started
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+### Prerequisites
 
-## Development
+- A modern web browser.
+- Access to the Lovable platform.
+- Node.js and npm if running the exported project locally.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### Installation
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+1. Create the application using Lovable.
+2. Export or clone the generated project if local development is required.
+3. Install the project dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal.
+
+*Note: These commands assume the generated project uses a compatible React-based setup.*
+
+## AI Functionality
+
+The application is designed to produce relevant, context-aware responses rather than relying on generic, hardcoded examples.
+
+Live AI functionality requires access to an AI model through a supported integration. Since this project is designed without a backend, any AI API integration must be configured carefully. Private API keys should never be embedded in frontend code.
+
+Without an AI connection, the interface can still operate as a frontend prototype, but live AI-generated responses will not be available.
+
+## Responsible AI
+
+Users should:
+- Review and verify AI-generated information before using it.
+- Avoid entering confidential, sensitive, or private workplace information.
+- Check generated emails before sending them.
+- Confirm research findings using reliable sources.
+- Remember that AI-generated content may contain errors or outdated information.
+
+## Project Goals
+
+The main objectives are to:
+- Reduce time spent on routine workplace tasks.
+- Improve professional communication.
+- Make research and information summarisation easier.
+- Support productivity through conversational AI.
+- Provide an accessible, user-friendly experience.
+
+## Future Improvements
+
+Potential enhancements include:
+- Secure AI API integration.
+- Exporting emails and research summaries.
+- Saving and managing previous outputs.
+- Additional email tones and writing styles.
+- Downloadable research reports.
+- Customisable user preferences.
+
+## Licence
+
+This project is intended for educational and productivity purposes. A specific open-source licence can be added when the distribution terms have been decided.
+
+---
+
+**AI Workplace Productivity Assistant** — Work smarter, communicate better, and save time.
