@@ -4,7 +4,7 @@ import { streamText, type ModelMessage } from "ai";
 const RUN = "X-Lovable-AIG-Run-ID";
 
 export function streamAi(request: Request, instructions: string, messages: ModelMessage[]) {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env['LOVABLE_API_KEY'];
   if (!apiKey) throw new Error("AI is not configured (missing key).");
   let runId: string | undefined;
   const provider = createOpenAI({
@@ -14,7 +14,7 @@ export function streamAi(request: Request, instructions: string, messages: Model
     fetch: async (input, init) => {
       const headers = new Headers(init?.headers);
       if (runId) headers.set(RUN, runId);
-      const res = await fetch(input, { ...init, headers });
+      const res = await fetch(input, { ...init, headers, signal: init?.signal ?? null });
       runId ??= res.headers.get(RUN) ?? undefined;
       if (!res.ok) {
         const body = await res.clone().text().catch(() => "");
