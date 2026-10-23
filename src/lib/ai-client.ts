@@ -7,7 +7,7 @@ export async function streamAi(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
-    signal,
+    signal: signal ?? null,
   });
   if (!res.ok || !res.body) throw new Error("Could not reach the AI service.");
   const reader = res.body.getReader();
