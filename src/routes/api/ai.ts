@@ -41,12 +41,25 @@ export const Route = createFileRoute("/api/ai")({
           }));
         }
 
-        try {
-          const result = streamAi(request, instructions, messages);
-          return result.toTextStreamResponse();
-        } catch (e) {
-          return Response.json({ error: (e as Error).message }, { status: 500 });
-        }
+        const enc = new TextEncoder();
+        const stream = new ReadableStream({
+          async start(ctrl) {
+            try {
+              const result = streamAi(request, instructions, messages);
+              for await (const part of result.fullStream) {
+                if (part.type === "text-delta") ctrl.enqueue(enc.encode(part.text));
+                else if (part.type === "error") {
+                  const err = part.error as Error;
+                  ctrl.enqueue(enc.encode(`\u0000ERROR:${err?.message ?? "AI request failed."}`));
+                }
+              }
+            } catch (e) {
+              ctrl.enqueue(enc.encode(`\u0000ERROR:${(e as Error).message}`));
+            }
+            ctrl.close();
+          },
+        });
+        return new Response(stream, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
       },
     },
   },
